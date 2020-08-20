@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+
+{% block title %}update{% endblock title %}
+
+{% block content %}
+
+    <div class="row center-align">
+        <form method="POST" class="col s12" autocomplete="off">
+            {% csrf_token %}
+            <div class="row">
+                <div class="input-field col s4 offset-s3">
+                    {{ form.title }}
+                    <label for="id_title">Task</label>
+                </div>
+                <div class="input-field col s2">
+                    {{ form.due_date }}
+                    <!-- <label for="id_due_date">Due Date</label> -->
+                </div>
+                <div class="input-field col s6 offset-s3">
+                    {{ form.description }}
+                    <label for="id_description">Description</label>
+                </div>
+                <!-- This field is not displaying -->
+                <div class="input-field">
+                    {{ form.completed }}
+                </div>
+                <div class="input-field col s6 offset-s3">
+                    <input type="submit" value="Update" class="btn blue lighten-1">
+                </div>
+            </div>
+        </form>
+    </div>
+
+{% endblock content %}

@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ task.title }}{% endblock title %}
+
+{% block content %}
+
+    <div class="row">
+        <div class="col s6 offset-s3">
+            <h4>{{ task.title }}</h4>
+        </div>
+        <div class="col s6 offset-s3">
+            <blockquote><p>{{ task.description }}</p></blockquote>        
+        </div>
+        <div class="col s6 offset-s3">
+            <p>{{ task.due_date }} : 
+                {% if task.completed == True %}
+                Completed
+            {% else %}
+                Pending
+            {% endif %}
+            </p>
+        </div>
+        <div class="col s6 offset-s3">
+            <a href="{% url 'todoapp:update' task.id %}" class="btn blue">Update</a>
+            <a href="{% url 'todoapp:delete' task.id %}" class="btn blue">Delete</a>
+        </div>
+    </div>
+
+{% endblock content %}

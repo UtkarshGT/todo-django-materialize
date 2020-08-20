@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %}Delete{% endblock title %}
+
+{% block content %}
+
+<div class="row">
+    <div class="col s6 offset-s3">
+        <h4>Delete "{{ blog_delete }}"?</h4>
+    </div>
+    <form method="POST" class="col s6 offset-s3">
+        {% csrf_token %}
+        <input type="submit" value="Yes" class="btn red">
+        <a href="{% url 'todoapp:index' %}" class="btn green">No</a>
+    </form>
+</div>
+
+{% endblock content %}

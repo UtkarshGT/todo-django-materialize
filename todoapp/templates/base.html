@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    
+    <!--Import Google Icon Font-->
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <title>Todo - {% block title %}{% endblock title %}</title>
+    {% block head %}{% endblock head %}
+</head>
+<body>
+
+    <nav>
+        <div class="nav-wrapper blue">
+            <a href="{% url 'todoapp:index' %}" class="brand-logo center">Django To-Do App</a>
+        </div>
+    </nav>
+    <div style="height: 5em;"></div>
+
+    {% block above_content %}
+    {% endblock above_content %}
+
+    <div class="content">
+        {% block content %}{% endblock content %}
+    </div>
+
+    {% block below_content %}
+    {% endblock below_content %}
+
+    <script>
+        M.AutoInit();
+    </script>
+</body>
+</html>
