@@ -7,10 +7,6 @@ class Task(models.Model):
     description = models.TextField(blank=True, null=True)
     completed = models.BooleanField(default=False)
 
-    # class Meta:
-    #     # fields = 
-    #     ordering = ['due_date']
-
     def __str__(self):
         return self.title
     

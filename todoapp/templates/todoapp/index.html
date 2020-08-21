@@ -2,6 +2,10 @@
 
 {% block title %}Home{% endblock title %}
 
+{% block above_content %}
+    <div style="height: 5em;"></div>
+{% endblock above_content %}
+
 {% block content %}
 
     <div class="row center-align">
@@ -36,6 +40,11 @@
                     <li>
                         <div class="collapsible-header">
                             <a href="{% url 'todoapp:detail' task.id %}"><p>{{ task }}</p></a>
+                            {% if task.due_date %}
+                                <span class="new badge red" data-badge-caption="{{ task.due_date }}"></span>
+                            {% else %}
+                                <span class="new badge green" data-badge-caption="Self Paced"></span>
+                            {% endif %}
                         </div>
                         <div class="collapsible-body">
                             <span>{{ task.description }}</span>

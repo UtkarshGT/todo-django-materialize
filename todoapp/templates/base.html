@@ -15,27 +15,31 @@
       <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
     <title>Todo - {% block title %}{% endblock title %}</title>
+
     {% block head %}{% endblock head %}
+
 </head>
 <body>
 
+    <!-- Persistant Navigation Bar -->
     <nav>
         <div class="nav-wrapper blue">
             <a href="{% url 'todoapp:index' %}" class="brand-logo center">Django To-Do App</a>
         </div>
     </nav>
-    <div style="height: 5em;"></div>
 
     {% block above_content %}
     {% endblock above_content %}
-
+    
+    <!-- Materialize CSS container -->
     <div class="content">
         {% block content %}{% endblock content %}
-    </div>
+    </div> <!-- Container End -->
 
     {% block below_content %}
     {% endblock below_content %}
 
+    <!-- Initialize all Materialize CSS JS components with default values -->
     <script>
         M.AutoInit();
     </script>
