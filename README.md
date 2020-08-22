@@ -1,4 +1,4 @@
-# todo-django-materialize
+# Beautiful To-Do app (Django + Materialize CSS)
 To-do app built with Django and Materialize CSS.
 
 I'm learning Django so there are class based views and function based views.
@@ -8,9 +8,7 @@ Will add VueJS to reduce number of pages eg. delete page.
 ## Help is appreciated:
 Bugs:
 <ul>
-  <li>Completed button doesn't show on update page.</li>
-  <li>Doesn't accept input if Materialize CSS Datepicker is used.</li>
-  <li>Materialize CSS not fully funcitonal on update page.</li>
+  You tell me
 </ul>
 <br>
 
