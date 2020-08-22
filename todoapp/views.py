@@ -14,8 +14,12 @@ def index(request):
 
     if request.method == 'POST':
         form = TaskForm(request.POST)
+        print(request.POST)
         if form.is_valid():
+            print("Valid")
             Task.objects.create(**form.cleaned_data)
+        else:
+            print("invalid")
 
     form = TaskForm()
 

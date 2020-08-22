@@ -9,7 +9,7 @@
 {% block content %}
 
     <div class="row center-align">
-        <form method="POST" class="col s12" autocomplete="off">
+        <form method='POST' class="col s12" autocomplete="off">
             {% csrf_token %}
             <div class="row">
                 <div class="input-field col s4 offset-s3">
@@ -18,7 +18,7 @@
                 </div>
                 <div class="input-field col s2">
                     {{ form.due_date }}
-                    <!-- <label for="id_due_date">Due Date</label> -->
+                    <label for="id_due_date">Due Date</label>
                 </div>
                 <div class="input-field col s6 offset-s3">
                     {{ form.description }}
@@ -39,7 +39,13 @@
                     {% for task in tasklist %}
                     <li>
                         <div class="collapsible-header">
-                            <a href="{% url 'todoapp:detail' task.id %}"><p>{{ task }}</p></a>
+                            <p>
+                                {% if task.completed == True %}
+                                    <strike>{{ task.title }}</strike>
+                                {% else %}
+                                    {{ task.title }}
+                                {% endif %}
+                            </p>
                             {% if task.due_date %}
                                 <span class="new badge red" data-badge-caption="{{ task.due_date }}"></span>
                             {% else %}
@@ -47,7 +53,14 @@
                             {% endif %}
                         </div>
                         <div class="collapsible-body">
-                            <span>{{ task.description }}</span>
+                            {% if task.description %}
+                                <span>{{ task.description }}</span>
+                            {% else %}
+                                <span class='grey-text'>NO DESCRIPTION</span>
+                            {% endif %}
+                            <br>
+                            <a href="{% url 'todoapp:update' task.id %}" class="btn green">Update</a>
+                            <a href="{% url 'todoapp:delete' task.id %}" class="btn red">Delete</a>
                         </div>
 
                     </li>
@@ -61,3 +74,9 @@
     {% endif %}
 
 {% endblock content %}
+
+{% block below_content %}
+
+
+
+{% endblock below_content %}
