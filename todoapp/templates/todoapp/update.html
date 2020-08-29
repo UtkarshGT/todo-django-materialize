@@ -15,23 +15,23 @@
 <form method="POST" autocomplete="off">
     {% csrf_token %}
     <div class="row">
-        <div class="input-field col l6 offset-l2 m6 offset-m2">
+        <div class="input-field col l6 offset-l2 m7 offset-m1 s12">
             {{ form.title }}
             <label for="id_title">Task</label>
         </div>
-        <div class="input-field col l2 m2">
+        <div class="input-field col l2 m3 s12">
             {{ form.due_date }}
             <label for="id_due_date">Due Date</label>
         </div>
     </div>
     <div class="row">
-        <div class="input-field col l8 offset-l2 m8 offset-m2">
+        <div class="input-field col l8 offset-l2 m10 offset-m1 s12">
             {{ form.description }}
             <label for="id_description">Description</label>
         </div>
     </div>
     <div class="row">
-        <div class="input-field col l8 offset-l2 m8 offset-m2">
+        <div class="input-field col l8 offset-l2 m8 offset-m1">
             <label>
                 {{ form.completed }}
                 <span>Completed</span>
